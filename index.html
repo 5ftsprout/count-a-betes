@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+    	<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    	<meta name="description" content="A carbohydrate counter.">
+    	<meta name="keywords" content="diabetes carbohydrates carbs carb food">
+
+		<title>Count-a-Betes: Carb Counter</title>
+
+		<!-- external CSS link -->
+		<link rel="stylesheet" href="css/normalize.css">
+		<link rel="stylesheet" href="css/style.css">
+	</head>
+	<body>
+		<section id="main">
+			<div id="top">
+				<div id="top_left">
+					<section id="title">
+						<h1>Count-a-Betes</h1>
+						<h2>Carbohydrate counter for your meals throughout your day.</h2>
+						<h2>Be kind to yourself and eat happily!</h2>
+						<h3>If the first result isn't quite what you're looking for click 'Get Carbs' again!</h2>
+					<section id="search" class="search">
+						<input type="text" id="input_ingredient" placeholder="Name of Ingredient">
+						<input type="number" id="input_gram" placeholder="Amount in grams">
+						<button type="button" name="get_carbs" id="get_carbs">Get Carbs</button>
+					</section>
+
+				</div>
+				<div id="top_right">
+					<div id="img_result">
+						<img src="" alt="Food ingredient image.">
+					</div>
+					<section id="search_result" class="result">
+						<h3 id="result_name">Ingredient</h3>
+						<h3>Carbohydrates: </h3><h3 id="result_carb"></h3>
+					</section>
+					<button type="button" name="add_this" id="add_this">Add This</button>
+				</div>
+			</div>
+
+			<div id="plate">
+				<div id="fork" class="fork">
+					<div id="prongs">
+						<div class="fork_prong fork"></div>
+						<div class="fork_prong fork"></div>
+						<div class="fork_prong fork"></div>
+					</div>
+					<div id="fork_head" class="fork"></div>
+					<div id="fork_handle" class="fork handle"></div>
+				</div>		
+				<section id="meal">
+					<section id="current_ingredients">
+						<div id="img_ingredient">
+							<img src="" alt="Food ingredient placed on your plate.">
+						</div>
+					</section>
+					<h2>Total Carbohydrates: </h2><h2 id="total_carb"></h2>
+					<button type="button" name="add_meal" id="add_meal">Add Meal</button>
+				</section>
+				<div id="knife">
+					<div id="knife_blade" class="knife"></div>
+					<div id="knife_handle" class="knife handle"></div>
+				</div>
+			</div>
+
+		</section>
+
+
+		<section id="aside">
+			<h2>Meals of Your Day</h2>
+			<ul id="meal_list">
+				<li id="meal_done">
+					<div id="img_meal">
+						<img src="" alt="Image of meal eaten.">
+					</div>
+					<div id="caption_box">
+						<h4 id="caption">Yummy breakfast!</h4>
+					</div>
+				</li>
+				<li id="meal_done">
+					<div id="img_meal">
+						<img src="" alt="Image of meal eaten.">
+					</div>
+					<div id="caption_box">
+						<h4 id="caption">Yummy breakfast!</h4>
+					</div>
+				</li>
+			</ul>
+			<button type="button" name="clear_meals">Clear Meals</button>
+		</section>
+		
+		<script type="text/javascript" src="js/main.js"></script>
+	</body>
+</html>

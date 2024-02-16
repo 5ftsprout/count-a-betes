@@ -1,0 +1,201 @@
+/******************************************
+/* CSS
+/*******************************************/
+
+/* Box Model Hack */
+*{
+  box-sizing: border-box;
+  margin: 0;
+}
+html {
+  font-size: 62.5%;
+  font-family: sans-serif;
+  color: rgb(255, 153, 0);
+}
+h1 {
+  font-size: 3em;
+}
+h2 {
+  font-size: 1.2em;
+}
+h3 {
+  font-size: 1em;
+}
+#img_result,
+#img_meal,
+#img_ingredient {
+  background-color: cornsilk;
+  width: 15em;
+  height: 15em;
+  border: 0.5em dashed rgb(255, 118, 118);
+  border-radius: 1.5em;
+}
+#meal {
+  width: 100%;
+}
+#aside {
+  border-radius: 1.5em;
+}
+img {
+  width: 15em;
+  height: 15em;
+  border-radius: 1.5em;
+}
+#caption_box {
+  opacity: 50%;
+}
+h4 {
+  text-align: center;
+  font-size: 1.5em;
+}
+li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+/******************************************
+/* LAYOUT
+/*******************************************/
+body {
+  display: flex;
+  padding: 2%;
+  margin: 0;
+}
+#top,
+#meal,
+#aside {
+  padding: 2%;
+  margin: 1em;
+}
+#top {
+  display: flex;
+}
+#top_left {
+  flex-direction: column;
+}
+#title h2,
+h3,
+.search,
+.result  {
+  display: block;
+  padding: 2%;
+}
+h3 {
+  text-wrap: nowrap;
+}
+input {
+  display: block;
+  margin: 1em;
+  margin-left: 0;
+}
+#top_right,
+#img_result {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#top_right {
+  flex-direction: column;
+  padding: 2em;
+}
+.result {
+  margin: 1em;
+}
+#add_this {
+  visibility: hidden;
+}
+#plate {
+  display: flex;
+}
+#meal {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+#meal button {
+  align-items: last baseline;
+}
+
+#aside {
+  flex-direction: column;
+  align-items: center;
+}
+#meal_list {
+  flex-direction: column;
+}
+#meal_done {
+  display: flex;
+  flex-direction: row;
+}
+#caption_box {
+  background-color: rgb(255, 231, 96);
+}
+img {
+  display: block;
+  margin: 0 auto;
+}
+
+
+/******************************************
+/* ADDITIONAL STYLES
+/*******************************************/
+
+
+
+#top {
+  background-color: lightgoldenrodyellow;
+}
+#aside {
+  background-color: rgb(255, 195, 235);
+}
+
+
+#fork,
+#knife {
+  /* background-color:rgb(255, 195, 235); */
+  width: 30px;
+  height: 300px;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#plate {
+  background-color: lightgoldenrodyellow;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+#prongs {
+  width: 3em;
+  display: flex;
+  justify-content: space-between;
+}
+.fork_prong {
+  background-color:rgb(255, 231, 96);
+  width: 0.5em;
+  height: 2em;
+}
+#fork_head {
+  background-color:rgb(255, 231, 96);
+  width: 3em;
+  height: 2.5em;
+  border-radius: 0 0 1em 1em;
+}
+.handle {
+  background-color:rgb(255, 153, 0);
+  width: 2em;
+  height: 10em;
+  border-radius: 0 0 1em 1em;
+  transform: perspective(0.5em) rotateX(1deg);
+}
+#knife_blade {
+  background-color:rgb(255, 231, 96);
+  width: 2.5em;
+  height: 10em;
+  border-radius: 80% 10% 0 50%;
+  margin-right: 1em;
+}
