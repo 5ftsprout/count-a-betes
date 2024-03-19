@@ -1,11 +1,7 @@
-//Example fetch using pokemonapi.co
 document.getElementById('get_carbs').addEventListener('click', getFetch)
 let i=0
 let lastsearch = ''
-const ingredientList = []
-let totalCarb = 0
 let totalCarbText = document.querySelector('#total_carb')
-
 
 function getFetch(){
   const appID = 'e9a378bb'
@@ -16,9 +12,17 @@ function getFetch(){
   const resultName = document.querySelector('#result_name')
   const resultImg = document.querySelector('img')
   const resultCarb = document.querySelector('#result_carb')
+  
+  const ingredientList = []
+  let totalCarb = 0
 
   fetch(url)
-      .then(res => res.json()) // parse response as JSON
+      .then(res => {
+        if (!res.ok) {
+          throw new Error(`HTTP error: ${res.status}`);
+        }
+        return res.json()
+      }) // parse response as JSON
       .then(data => {
         //console.log(data)
         //check if user is searching for the same ingredient
@@ -42,18 +46,27 @@ function getFetch(){
           this.img = resultImg.src
           this.carb = resultCarb.innerText
         }
+        addToMeal(){
+          totalCarb += Number(this.carb)
+          totalCarbText.innerText = totalCarb
+          ingredientList.push(currentIngredient)
+        }
+        removeFromMeal(){
+          totalCarb -= this.carb
+          let index = ingredientList.findIndex( ingredient => ingredient.name === this.name )
+          ingredientList.splice(index, 1)
+        }
       };
       
       function addIngredient() {
         currentIngredient = new MealIngredient()
-        console.log(currentIngredient.name)
-        console.log(ingredientList)
-        let totalCarb = 0
-        ingredientList.push(currentIngredient)
+        currentIngredient.addToMeal()
+        //ingredientList.push(currentIngredient)
         //ingredientList.forEach( (ingredient) => )
         //Number(totalCarb += Number(ingredientList.carb)) 
-        totalCarb += Number(currentIngredient.carb)
-        totalCarbText.innerText = Number(totalCarb)
-        console.log(ingredientList)
+        //totalCarb += Number(currentIngredient.carb)
+        //totalCarbText.innerText = totalCarb
+        //console.log(ingredientList.name)
       };
+
 }
